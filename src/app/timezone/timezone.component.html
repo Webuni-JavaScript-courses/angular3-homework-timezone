@@ -1,0 +1,10 @@
+<div>
+  {{current ? 'Jelenlegi időzona: ' + timezone : timezone}}
+</div>
+<div>
+  {{dateString}}
+</div>
+<div>
+  <button (click)="updateRequested()">Frissítés</button>
+  <button (click)="currentChanged()" [disabled]="current">Jelenleginek jelöl</button>
+</div>
