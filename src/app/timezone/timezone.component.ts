@@ -19,7 +19,7 @@ export class TimezoneComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.timezone) {
+    if (changes.timezone && this.timezone) {
       this.setDate();
     }
   }

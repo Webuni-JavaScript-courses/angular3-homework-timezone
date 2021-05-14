@@ -1,10 +1,12 @@
-<div>
-  {{current ? 'Jelenlegi időzona: ' + timezone : timezone}}
-</div>
-<div>
-  {{dateString}}
-</div>
-<div>
-  <button (click)="updateRequested()">Frissítés</button>
-  <button (click)="currentChanged()" [disabled]="current">Jelenleginek jelöl</button>
+<div class="container" [class.highlight]="current">
+  <div>
+    <input type="text" [(ngModel)]="timezone">
+  </div>
+  <div>
+    {{dateString | date:'shortTime'}}
+  </div>
+  <div>
+    <button (click)="updateRequested()">Frissítés</button>
+    <button (click)="currentChanged()" [disabled]="current">Jelenleginek jelöl</button>
+  </div>
 </div>

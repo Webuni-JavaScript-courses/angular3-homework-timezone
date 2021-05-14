@@ -1,5 +1,8 @@
 <h1>Timezones</h1>
 
-<app-timezone [timezone]="timezone1" [current]="current1" (currentChange)="current1Changed($event)"></app-timezone>
-<app-timezone [timezone]="timezone2" [current]="current2" (currentChange)="current2Changed($event)"></app-timezone>
+ <app-timezone *ngFor="let timezone of timezones; let index = index"
+ [timezone]="timezone.name" [current]="timezone.current" (currentChange)="currentChanged($event, index)"
+ ></app-timezone>
+
+ <button (click)="timezoneAdded()" *ngIf="isAddNewButtonVisible">Új hozzáadása</button>
 
